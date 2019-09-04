@@ -1,3 +1,4 @@
+pathogen
 robot syntax highlighting
 ack.vim
 ALE
