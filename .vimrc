@@ -16,9 +16,9 @@ set rtp+=~/.fzf
 
 command -nargs=+ -complete=file -bar AG silent! grep! <args>|cwindow|redraw!
 
-" map fzf to ctrl p and ack to ctrl-shift-f
+" map fzf to ctrl p and ack to ctrl h
 nmap <C-p> :FZF -m<CR>
-nmap <C-F> :Ack!<space>
+nmap <C-h> :Ack!<space>
 
 "go to next error in linter
 nmap <silent> <C-k> :ALENext<cr>
@@ -30,6 +30,10 @@ map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 let g:python_highlight_all = 1
+
+" Move across wrapped lines like regular lines
+noremap 0 ^ " Go to the first non-blank character of a line
+noremap ^ 0 " Just in case you need to go to the very beginning of a line
 
 " Allow meta key in gnome terminal
 let c='a'
@@ -70,7 +74,7 @@ set hid
 " Ignore case when searching
 set ignorecase
 
-" When searching try to be smart about cases 
+" When searching try to be smart about cases
 set smartcase
 
 " Highlight search results
